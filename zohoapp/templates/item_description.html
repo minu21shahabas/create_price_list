@@ -1,0 +1,144 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block  content %}
+<section>
+
+  <div class="row fixed-top ml-4 " style="top: 7rem;">
+   <div class="col-md-2" style="border-right: 1px solid white;height: 100vh;">
+     <h6 class="mb-4"><a class="active  " href="{% url 'base' %}"><i class="fa fa-fw fa-home mr-2 "></i> Home</a> </h6>
+     <h6 class="mb-4"><a class="active  " href="{% url 'itemview' %}"><i class="fa-solid fa-sitemap mr-3 "></i>Items</a> <a class="ml-5 active" href="{% url 'additem' %}"><i class="fa-solid fa-plus "></i></a></h6>
+     <h6 class="mb-4"><a class="active  " href="#"><i class="fa-solid fa-building-columns mr-3"></i>Banking</a></h6>
+     <h6 class="mb-4"><a class="active  " href="#"><i class="fa-solid fa-cart-shopping mr-3"></i>Sales</a></h6>
+     <h6 class="mb-4"><a class="active  " href="#"><i class="fa-solid fa-basket-shopping mr-3"></i>Purchases</a></h6>
+     <h6 class="mb-4"><a class="active  " href="#"><i class="fa-solid fa-business-time mr-3 "></i>Time Tracking</a></h6>
+      <h6 class="mb-4"><a class="active  " href="#"><i class="fa-solid fa-user mr-3 "></i>Accountant</a></h6>
+      <h6 class="mb-4"><a class="active  " href="#"><i class="fa-solid fa-calendar-week mr-3"></i>Reports</a></h6>
+      <h6 class="mb-4"><a class="active  " href="#"><i class="fa-solid fa-file mr-3"></i>Documents</a></h6>
+       <h6 class="mb43"><a class="active  " href="#"><i class="fa-solid fa-money-bill mr-3 "></i>Payroll</a></h6>
+   </div>
+   <div class="col-md-3" style="border-right: 1px solid white;height: 100vh;">
+     <div class="row">
+       <div class="col-md-4"><a class="text-white" style="font-size: 1.5rem;">All Items</a></div>
+       <div class="col-md-4 " style="margin-top: -3rem;"><a style="color: #ccc;width: 4rem;height: 2rem;margin-top: 3rem;" class="btn btn-success " href="{% url 'additem' %}"><i class="fa-solid fa-plus "></i>New</a>
+         <a style="color: #ccc;"href="#3">      
+           <form action="">
+             <select name="" style="width: 4rem;margin-top: -2rem;margin-left: 5rem;" class="form-control">
+ 
+               <option value="">...</option>
+               <option value="active" >Mark as active</option>
+               <option value="inactive" >Mark as Inactive</option>
+           </select>
+           </form> </a>
+       </div>
+     </div> 
+     <table class="table  text-white">
+       <thead>
+         <tr>
+           <th>Name</th>
+          
+         </tr>
+         
+       </thead>
+       <tbody>
+         {% for v in items %}
+
+         <tr>
+
+           <td onclick="location.href ='{% url 'detail' v.id %}' " > {{v.Name}}</td>
+          
+         </tr>
+         {% endfor %}
+       </tbody>
+     </table>
+   </div> 
+   <div class="col-md-6">
+     <div class="row">
+       <div class="col-md-4"><a class="text-white" style="font-size: 1.5rem;"></a></div>
+       <div class="col-md-4 " style="margin-top: -3rem;margin-left: 14rem;"><a style="color: #ccc;width: 4rem;height: 2rem;margin-top: 3rem;" class="btn btn-light text-dark " href="{% url 'additem' %}"><i class="fa fa-pencil"></i></i></a>
+         <a style="color: #ccc;"href="#3">      
+           <form action="">
+             <select name="" style="width: 5rem;margin-top: -2rem;margin-left: 5rem;height: 2rem;" class="form-control">
+ 
+               <option value="">More</option>
+               <option value="active" >Mark as active</option>
+               <option value="inactive" >Mark as Inactive</option>
+           </select>
+           </form> </a>
+           <a style="color: #ccc;height: 2rem;margin-top: -3.6rem;margin-left: 11rem;" class="btn  text-dark " href="{% url 'additem' %}"><i class="fa fa-close" style="font-size:22px;color: #ccc;"></i></a>
+       </div>
+     </div>
+
+     <!-- ============================ tab view (detail page )==================================== -->
+    <div class="tabs">
+    <div class="tab-header">
+
+     <div class="active">
+       <i class="fa fa code"></i>View
+     </div>
+     <div >
+       <i class="fa fa code"></i> Description
+     </div>
+
+     <div >
+       <i class="fa fa code"></i> History
+     </div>
+
+    </div>
+
+    <div class="tab-indicator"></div>
+
+
+    <div class="tab-body">
+     <div class="activ">
+       <h2>this first section</h2>
+       <p>bdsjhblllllllllllllllllllllllllllll</p>
+     </div>
+
+     <div >
+       <h2>this second section</h2>
+       <p>bdsjhblllllllllllllllllllllllllllll</p>
+     </div>
+
+
+     <div >
+       <h2>this third section</h2>
+       <p>bdsjhblllllllllllllllllllllllllllll</p>
+     </div>
+
+
+    </div>
+
+<script>
+
+let tabHeader = document.getElementsByClassName("tab-header")[0];
+let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
+let tabBody = document.getElementsByClassName("tab-body")[0];
+
+let tabsPane =tabHeader.getElementsByTagName("div")
+for(let i=0;i<tabsPane.length;i++){
+tabsPane[i].addEventListener("click",function(){
+ tabHeader.getElementsByClassName("active")[0].classList.remove("active");
+ tabsPane[i].classList.add("active");
+
+ tabBody.getElementsByClassName("activ")[0].classList.remove("activ");
+tabBody.getElementsByTagName("div")[i].classList.add("activ");
+
+   tabIndicator.style.left = 'calc(calc(100% / 3) * ${i})';
+
+});
+}
+
+
+</script>
+
+
+   </div>
+
+   </div>
+
+  </div>
+
+ 
+</section>
+
+{% endblock %}

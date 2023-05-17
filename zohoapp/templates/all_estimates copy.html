@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+</style>
+
+<section>
+  <div class="row fixed-top pl-4 " style="top: 7rem; margin-left: 18rem;">
+
+    <!-- <div class="col-md-4 " > -->
+      <!-- <div class="row"> -->
+        <div class="col-md-6"><a class="text-white" style="font-size: 1.5rem;">All Estimates</a></div>
+        <div class="col-md-6 form-inline justify-content-end" >
+          <a style="color: white; background-color: rgb(210, 132, 30);" class="btn mr-1"
+            href="{% url 'newestimate' %}"><i class="fa-solid fa-plus "></i>New</a>
+          <div class="dropdown rounded" style="color: white; background-color: rgb(210, 132, 30);">
+            <button type="button" class="btn dropdown-toggle text-white" data-toggle="dropdown">
+
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Create Estimate</a>
+              <a class="dropdown-item" href="#">Create Estimate (Pre GST)</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-sm-12" style="height: 600px; overflow-y: scroll;">
+          <table class="table  text-white">
+           <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>Estimmate</td>
+            <td>0.00</td>
+          </tr>
+          
+
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- <div class="col-md-8">
+     <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-7 text-white">
+        <a href="" class="btn text-white" ><i class="fa fa-pencil"></i></a>
+        <a href="" class="btn text-white" ><i class="fa fa-file-pdf-o"></i></a>
+        <a href="" class="btn text-white" ><i class="fa fa-print"></i></a>
+        <a href="" class="btn text-white" ><i class="fas fa-envelope"></i></a>
+        <a href="" class="btn text-white" ><i class="fas fa-paperclip"></i></a>
+        <a href="" class="btn btn-sm text-white" style="background-color: rgb(210, 132, 30);" >Convert to Invoice</a>
+        <a href="" class="btn btn-sm text-white" style="background-color: rgb(210, 132, 30);">More</a>
+      </div>
+     </div>
+    </div> -->
+
+  </div>
+
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+{% endblock %}
